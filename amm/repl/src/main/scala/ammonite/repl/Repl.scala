@@ -256,9 +256,10 @@ object Repl{
         None
       case Res.Exception(ex, msg) =>
         setLastException(ex)
-        printError(
-          Repl.showException(ex, colors.error(), fansi.Attr.Reset, colors.literal())
-        )
+        println(ex)
+//        printError(
+//          Repl.showException(ex, colors.error(), fansi.Attr.Reset, colors.literal())
+//        )
         printError(msg)
         None
       case _ =>
